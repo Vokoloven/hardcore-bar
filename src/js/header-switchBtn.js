@@ -8,7 +8,6 @@ const refs = {
 
 refs.switchBtn.addEventListener('click', inHeaderOnClickSwitchThemeButton);
 
-console.log(refs);
 refs.textLight.style.color = '#FD5103';
 
 let onSwitchCuttonColorChange = 1;

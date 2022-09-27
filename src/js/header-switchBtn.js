@@ -1,7 +1,7 @@
 const refs = {
   body: document.querySelector('body'),
-  switchBtn: document.querySelector('.header__color-theme-box__switch'),
-  switchBall: document.querySelector('.header__color-theme-box__switch-ball'),
+  switchBtn: document.querySelector('.header__color-theme-box-switch'),
+  switchBall: document.querySelector('.header__color-theme-box-switch-ball'),
   textLight: document.querySelector('.header__color-theme-box-text--light'),
   textDark: document.querySelector('.header__color-theme-box-text--dark'),
 };

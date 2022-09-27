@@ -1,0 +1,150 @@
+.header {
+    &-container {
+
+        display: flex;
+
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width: 768px) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            padding-left: 16px;
+            margin-right: 16px;
+        }
+    }
+
+    &__logo {
+        width: 123px;
+
+        @media screen and (min-width: 768px) {
+            width: 156px;
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        @media screen and (min-width: 1280px) {
+            display: flex;
+            margin-right: auto;
+            margin-left: 43px;
+        }
+
+        &-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            align-items: flex-end;
+            gap: 60px;
+        }
+
+        &-item {
+            height: max-content;
+        }
+
+        &-text {
+            margin: 0;
+            margin-bottom: 0px;
+
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.33;
+            letter-spacing: 0.02em;
+            color: #202025;
+        }
+    }
+
+    // &__logo-link {
+    // }
+    &__button-menu {
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+
+        @media screen and (min-width: 768px) {
+            margin-left: 40px;
+        }
+
+        border: none;
+        background-color: inherit;
+
+        @media screen and (min-width: 1280px) {
+            display: none;
+        }
+    }
+
+    &__input-box {
+        margin-left: auto;
+        display: flex;
+        position: relative;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 172px;
+        }
+    }
+
+    &__input-text {
+        padding: 0px 0px 0px 48px;
+        width: 288px;
+        border: 1px solid #FD5103;
+        border-radius: 4px;
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.71;
+            letter-spacing: 0.02em;
+            color: #5F6775;
+            opacity: 0.4;
+        }
+    }
+
+    &__input-button {
+        position: absolute;
+        border: 1px solid #FD5103;
+        border-left: none;
+        border-bottom: none;
+        border-top: none;
+        background-color: inherit;
+        height: 100%;
+        width: 40px;
+    }
+
+    &__color-theme-box {
+        @media screen and (max-width: 1279px) {
+            display: none;
+        }
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &__text {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.33;
+            align-items: center;
+            color: #5F6775;
+            ;
+        }
+
+        &__checkbox {
+            display: none;
+            width: 40px;
+            background-color: red;
+            border: 1px solid black;
+        }
+    }
+}

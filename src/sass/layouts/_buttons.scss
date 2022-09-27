@@ -1,0 +1,18 @@
+.btn__orange {
+    padding: 15px 18px;
+    background-color: #FE7031;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.btn__transparent {
+    display: flex;
+    text-align: center;
+    gap: 9px;
+    padding: 10px 19px;
+    background-color: transparent;
+    border-radius: 4px;
+    border-color: $colorFontPrimary;
+    color: $colorFontPrimary;
+}

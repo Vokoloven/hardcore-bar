@@ -4,11 +4,7 @@
   padding-right: 20px;
   margin: 0 auto;
 
-  @include mobile-short {
-    max-width: 320px;
-  }
-
-  @include mobile-wide {
+  @include mobile {
     max-width: 480px;
   }
 

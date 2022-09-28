@@ -7,27 +7,55 @@
         class="header__logo"
       />
     </a>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <p class="header__nav-text">Home</p>
+
+    <button class="header__button-menu">
+      <svg class="header__icon-menu" width="30px" height="16px">
+        <use href="./images/header/header-sprite.svg#icon-menu-black"></use>
+      </svg>
+      <svg
+        class="header__icon-menu header__icon-menu--close header__icon-menu--is-hidden"
+        width="30px"
+        height="30px"
+      >
+        <use
+          href="./images/header/header-sprite.svg#icon-clarity_close-line"
+        ></use>
+      </svg>
+    </button>
+  </div>
+  <div class="header__menu header__menu--is-hidden">
+    <a href="./index.html" class="header__logo-link">
+      <img
+        src="./images/header/Logo.svg"
+        alt="Logo-coktails"
+        class="header__logo header__logo--menu"
+      />
+    </a>
+    <nav class="header__nav header__nav--menu">
+      <ul class="header__nav-list header__nav-list--menu">
+        <li class="header__nav-item header__nav-item--menu">
+          <a onclick="return false" href="./index.html" class="header__nav-text"
+            >Home</a
+          >
         </li>
         <li class="header__nav-item">
-          <p class="header__nav-text">Favorite</p>
+          <button type="button" class="header__nav-text--btn">Favorite</button>
         </li>
       </ul>
     </nav>
-    <div class="header__input-box">
-      <button class="header__input-button">
-        <img
-          src="./images/header/bx_search.svg"
-          alt="search-btn-img"
-          class="header__input-icon"
-        />
-      </button>
-      <input class="header__input-text" type="text" placeholder="Search" />
+    <div class="header__input-box header__input-box--menu">
+      <form action="">
+        <button class="header__input-button">
+          <img
+            src="./images/header/bx_search.svg"
+            alt="search-btn-img"
+            class="header__input-icon"
+          />
+        </button>
+        <input class="header__input-text" type="text" placeholder="Search" />
+      </form>
     </div>
-    <div class="header__color-theme-box">
+    <div class="header__color-theme-box header__color-theme-box--menu">
       <span
         class="header__color-theme-box-text header__color-theme-box-text--light"
         >Light</span
@@ -40,10 +68,19 @@
         >Dark</span
       >
     </div>
-    <button class="header__button-menu">
-      <svg class="header__icon-menu" width="30px" height="16px">
-        <use href="./images/header/header-sprite.svg#icon-menu-black"></use>
-      </svg>
-    </button>
+  </div>
+  <div class="header__favorite-box header__favorite-box--is-hidden">
+    <ul class="header__favorite-box__list">
+      <li class="header__favorite-box__item">
+        <a onclick="return false" class="header__favorite-box__text" href=""
+          ><span> Favorite cocktails</span></a
+        >
+      </li>
+      <li class="header__favorite-box__item">
+        <a onclick="return false" class="header__favorite-box__text" href=""
+          >Favorite ingridients</a
+        >
+      </li>
+    </ul>
   </div>
 </header>

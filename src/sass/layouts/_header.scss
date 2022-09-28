@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+
   &-container {
     display: flex;
 
@@ -26,14 +28,28 @@
     @include tablet {
       width: 156px;
     }
+
+    &--menu {
+      display: none;
+
+      @include tablet {
+        display: block;
+        width: 124px;
+      }
+
+      @include desktop {
+        display: none;
+      }
+
+    }
   }
 
   &__nav {
-    display: none;
+    // display: none;
 
     @include desktop {
       display: flex;
-      margin-right: auto;
+      // margin-left: auto;
       margin-left: 43px;
     }
 
@@ -44,6 +60,35 @@
       margin: 0;
       align-items: flex-end;
       gap: 60px;
+
+      &--menu {
+        @media screen and (max-width: 1279px) {
+          position: absolute;
+          top: 54px;
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          left: 324px;
+        }
+
+        @media screen and (max-width: 767px) {
+          position: absolute;
+          top: 171px;
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          left: -14px;
+        }
+
+
+      }
+    }
+
+    &-item--menu {
+      @media screen and (max-width: 1279px) {
+        position: relative;
+        left: -26px;
+      }
     }
 
     &-item {
@@ -53,12 +98,56 @@
     &-text {
       margin: 0;
       margin-bottom: 0px;
+      text-decoration: none;
 
       font-weight: 400;
       font-size: 18px;
       line-height: 1.33;
       letter-spacing: 0.02em;
       color: #202025;
+
+      @media screen and (max-width: 1279px) {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        color: #202025;
+      }
+    }
+
+    &-text--btn {
+      margin: 0;
+      margin-bottom: 0px;
+      text-decoration: none;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.33;
+      letter-spacing: 0.02em;
+      color: #202025;
+      background-color: inherit;
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      @media screen and (max-width: 1279px) {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        color: #202025;
+      }
+    }
+
+    &--menu {
+
+      @include tablet {
+        display: block;
+      }
+
+      @media screen and (max-width: 1279px) {
+        position: absolute;
+      }
     }
   }
 
@@ -69,9 +158,9 @@
     padding: 0;
     margin-left: auto;
 
-    @include tablet {
-      margin-left: 40px;
-    }
+    // @include tablet {
+    //   margin-left: 40px;
+    // }
 
     border: none;
     background-color: inherit;
@@ -81,23 +170,61 @@
     }
   }
 
-  &__input-box {
-    margin-left: auto;
-    display: flex;
-    position: relative;
 
-    @media screen and (max-width: 768px) {
-      display: none;
+  &__icon-menu--close {
+    display: block;
+    position: fixed;
+    top: 25px;
+    right: 32px;
+    z-index: 3;
+
+    @media screen and (max-width: 767px) {
+      top: 21px;
+      right: 20px;
     }
+  }
+
+  &__icon-menu--is-hidden {
+    display: none;
+  }
+
+  &__input-box {
+    margin-left: 251px;
+    display: flex;
+    position: fixed;
+
 
     @include desktop {
       margin-right: 172px;
+      position: absolute;
+      margin: 0;
+      height: 40px;
+    }
+
+    &--menu {
+      @include tablet {
+        display: none;
+      }
+
+      @include desktop {
+        display: block;
+      }
+
+      @media screen and (max-width: 767px) {
+        position: absolute;
+        top: 91px;
+        left: 20px;
+        margin-left: 0;
+        height: 40px;
+        width: 280px;
+      }
     }
   }
 
   &__input-text {
     padding: 0px 0px 0px 48px;
     width: 288px;
+    height: 40px;
     border: 1px solid #fd5103;
     border-radius: 4px;
 
@@ -109,6 +236,14 @@
       color: #5f6775;
       opacity: 0.4;
     }
+
+    @include desktop {
+      height: 40px;
+    }
+  }
+
+  &__input-icon {
+    margin: auto;
   }
 
   &__input-button {
@@ -120,12 +255,30 @@
     background-color: inherit;
     height: 100%;
     width: 40px;
+
   }
 
   &__color-theme-box {
-    @media screen and (max-width: 1279px) {
-      display: none;
+    &--menu {
+
+
+      @media screen and (max-width: 1279px) {
+        position: absolute;
+        top: 56px;
+        transform: translateY(-100%);
+        left: 154px;
+        display: flex;
+        margin-left: 69px;
+      }
+
+      @media screen and (max-width: 767px) {
+        top: 20px;
+        transform: translateY(0);
+        left: 20px;
+        margin-left: 0px;
+      }
     }
+
     display: flex;
     align-items: center;
     gap: 12px;
@@ -137,6 +290,7 @@
       align-items: center;
       color: #5f6775;
     }
+
     &__switch {
       position: relative;
       width: 40px;
@@ -144,6 +298,7 @@
       background: #ffffff;
       border: 0.604701px solid #fd5103;
       border-radius: 10px;
+
       &-ball {
         height: 16px;
         width: 16px;
@@ -151,13 +306,116 @@
         border-radius: 9px;
         margin-top: 1px;
         margin-left: 1px;
+
         &.ball-left {
           margin-left: 1px;
         }
+
         &.ball-right {
           transform: translateX(20px);
         }
       }
     }
+  }
+
+  // &__color-theme-box--menu {
+  //   display: block;
+  // }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    // width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+
+    @include desktop {
+      height: auto;
+      position: absolute;
+      display: flex;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 100%;
+      padding: 20px 32px 20px 32px;
+    }
+  }
+
+  &__menu--is-hidden {
+    display: none;
+
+    @include desktop {
+      position: relative;
+      top: -63px;
+      // right: 16px;
+      height: inherit;
+      // background-color: tomato;
+      display: flex;
+      height: 45px;
+      margin-left: 188;
+    }
+  }
+
+  &__favorite-box--is-hidden {
+    display: none;
+  }
+
+  &__favorite-box {
+    position: absolute;
+    z-index: 3;
+    width: 210px;
+    height: 96px;
+    border: 1px solid #FD5103;
+    border-radius: 4px;
+    left: 357px;
+    top: 71px;
+
+    @media screen and (max-width: 1279px) {
+      top: 230px;
+    }
+
+    @media screen and (max-width: 767px) {
+      left: 20px;
+      top: 307px;
+    }
+
+
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      height: 48px;
+      align-items: center;
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding-left: 12px;
+      text-decoration: none;
+      @include fonts(Poppins, normal, 400, 18px, 24px);
+      letter-spacing: 0.02em;
+      color: #000000;
+
+      &:hover,
+      &:focus {
+        background-color: #FD5103;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__input--icon {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

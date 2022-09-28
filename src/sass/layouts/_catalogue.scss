@@ -11,8 +11,8 @@
   @include tablet {
     display: flex;
     flex-flow: wrap;
-    min-width: 768px;
 
+    min-width: 768px;
     padding-left: 28px;
     padding-right: 28px;
     padding-top: 40px;
@@ -20,33 +20,34 @@
   }
 
   &__title {
+    @include fonts(Roboto, normal, 900, 32px, 38px);
+    color: $colorFontSecondary;
+
     margin-bottom: 20px;
     width: 129px;
     height: 37px;
 
-    @include fonts(Roboto, normal, 900, 32px, 38px);
-
-    color: $colorFontSecondary;
-
     @include tablet {
       order: 1;
+
       margin-left: 320px;
       margin-bottom: 28px;
     }
   }
 
   &__title-second {
+    @include fonts(Poppins, normal, 600, 16px, 26px);
+    color: $colorFontSecondary;
+
     margin-bottom: 20px;
     width: 122px;
     height: 26px;
 
-    @include fonts(Poppins, normal, 600, 16px, 26px);
-
     text-transform: uppercase;
-    color: $colorFontSecondary;
 
     @include tablet {
       @include fonts(Poppins, normal, 600, 16px, 24px);
+
       margin-bottom: 24px;
     }
 
@@ -57,13 +58,12 @@
   }
 
   &__text {
+    @include fonts(Poppins, normal, 400, 16px, 28px);
+    color: $colorFontTertiary;
+
     margin-bottom: 32px;
     width: 275px;
     height: 168px;
-
-    @include fonts(Poppins, normal, 400, 16px, 28px);
-
-    color: $colorFontTertiary;
 
     @include tablet {
       width: 615px;
@@ -77,25 +77,25 @@
     min-width: 280px;
 
     @include tablet {
-      margin-bottom: 0;
-      width: 288px;
-      height: 320px;
+      order: 0;
+
       display: flex;
       position: absolute;
       top: 0;
       left: 0;
 
-      order: 0;
+      margin-bottom: 0;
+      width: 288px;
+      height: 320px;
     }
   }
 
   &__span {
+    @include fonts(Poppins, normal, 300, 14px, 21px);
+    color: $colorFontSecondary;
+
     width: 80px;
     height: 21px;
-
-    @include fonts(Poppins, normal, 300, 14px, 21px);
-
-    color: $colorFontSecondary;
   }
 
   &__list {
@@ -110,7 +110,6 @@
 
   &__item {
     @include fonts(Poppins, normal, 400, 16px, 26px);
-
     color: $colorFontTertiary;
 
     &:before {
@@ -122,31 +121,25 @@
 
   &__button {
     @include fonts(Roboto, normal, 400, 20px, 24px);
-    letter-spacing: 0.02em;
+    color: $colorFontQuaternary;
 
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+
+    letter-spacing: 0.02em;
+
     padding: 12px 22px;
     gap: 10px;
-
     width: 185px;
     height: 48px;
 
-    background: $colorFontPrimary;
-    border-radius: 4px;
-
-    color: $colorFontQuaternary;
-    border-color: transparent;
-
     @include tablet {
+      order: 4;
+
       display: flex;
       justify-content: end;
       margin-left: auto;
-      // position: absolute;
-      // right: 28px;
-      // bottom: 28px;
-      order: 4;
     }
   }
 
@@ -170,6 +163,7 @@
   &__ingridients {
     @include tablet {
       order: 2;
+
       margin-left: 320px;
     }
   }

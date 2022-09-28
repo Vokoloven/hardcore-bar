@@ -1,16 +1,16 @@
 .btn__orange {
   padding: 15px 18px;
-  background-color: #fe7031;
+  background-color: $colorFontPrimary;
   border: none;
   border-radius: 4px;
-  color: #ffffff;
+  color: $colorBackgroundDay;
 
   &:hover,
   &:focus {
-    background-color: #ffffff;
-    color: #fe7031;
+    background-color: $colorBackgroundDay;
+    color: $colorFontPrimary;
     border-radius: 4px;
-    border: 1px solid #fe7031;
+    border: 1px solid $colorFontPrimary;
   }
 }
 
@@ -26,7 +26,7 @@
 
   &:hover,
   &:focus {
-    background-color: #fe7031;
-    color: #ffffff;
+    background-color: $colorFontPrimary;
+    color: $colorBackgroundDay;
   }
 }

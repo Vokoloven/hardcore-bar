@@ -7,16 +7,52 @@
         class="header__logo"
       />
     </a>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <p class="header__nav-text">Home</p>
-        </li>
-        <li class="header__nav-item">
-          <p class="header__nav-text">Favorite</p>
-        </li>
-      </ul>
-    </nav>
+    <div class="header__menu">
+      <a href="./index.html" class="header__logo-link">
+        <img
+          src="./images/header/Logo.svg"
+          alt="Logo-coktails"
+          class="header__logo header__logo--menu"
+        />
+      </a>
+      <div class="header__input-box header__input-box--menu">
+        <button class="header__input-button header__input-button-menu">
+          <img
+            src="./images/header/bx_search.svg"
+            alt="search-btn-img"
+            class="header__input-icon header__input-icon--menu"
+          />
+        </button>
+        <input
+          class="header__input-text header__input-text--menu"
+          type="text"
+          placeholder="Search"
+        />
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="./index.html" class="header__nav-text">Home</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="./index.html" class="header__nav-text">Favorite</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__color-theme-box">
+        <span
+          class="header__color-theme-box-text header__color-theme-box-text--light"
+          >Light</span
+        >
+        <div class="header__color-theme-box-switch">
+          <div class="header__color-theme-box-switch-ball"></div>
+        </div>
+        <span
+          class="header__color-theme-box-text header__color-theme-box-text--dark"
+          >Dark</span
+        >
+      </div>
+    </div>
     <div class="header__input-box">
       <button class="header__input-button">
         <img
@@ -26,19 +62,6 @@
         />
       </button>
       <input class="header__input-text" type="text" placeholder="Search" />
-    </div>
-    <div class="header__color-theme-box">
-      <span
-        class="header__color-theme-box-text header__color-theme-box-text--light"
-        >Light</span
-      >
-      <div class="header__color-theme-box__switch">
-        <div class="header__color-theme-box__switch-ball"></div>
-      </div>
-      <span
-        class="header__color-theme-box-text header__color-theme-box-text--dark"
-        >Dark</span
-      >
     </div>
     <button class="header__button-menu">
       <svg class="header__icon-menu" width="30px" height="16px">

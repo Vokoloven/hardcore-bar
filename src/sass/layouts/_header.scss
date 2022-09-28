@@ -1,43 +1,40 @@
 .header {
-    position: relative;
-    &-container {
+  &-container {
+    display: flex;
 
-        display: flex;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
-        padding-top: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        margin-left: auto;
-        margin-right: auto;
-
-        @include tablet {
-            padding-left: 32px;
-            padding-right: 32px;
-        }
-
-        @include desktop {
-            padding-left: 16px;
-            margin-right: 16px;
-        }
+    @include tablet {
+      padding-left: 32px;
+      padding-right: 32px;
     }
 
-    &__logo {
-        width: 123px;
+    @include desktop {
+      padding-left: 16px;
+      margin-right: 16px;
+    }
+  }
 
-        @include tablet {
-            width: 156px;
-        }
-        &--menu {
-            display: none;
-            @include tablet {
-                width: 123px;
-                display: block;
-            }
-                @include desktop {
-                    display: none;
-                }
-        }
+  &__logo {
+    width: 123px;
+
+    @include tablet {
+      width: 156px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      margin-right: auto;
+      margin-left: 43px;
     }
     &__menu {
         &--is-hidden {
@@ -53,195 +50,132 @@
             background-color: rgba(255, 0, 0, 0.4);
             padding: 20px;
 
-        }
-            display: flex;
-            
-    }
-    &__nav {
-        @media screen and (max-width: 767px) {
-            margin-top: 151px;
-        }
-        @include tablet {
-            margin-left: 182px;
-            margin-top: 94px;
-        }
-
-        @include desktop {
-            display: flex;
-            margin-right: auto;
-            margin-left: 43px;
-            margin-top: 0px;
-        }
-
-        &-list {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            align-items: flex-end;
-            gap: 60px;
-            @media screen and (max-width: 1279px) {
-                flex-direction: column;
-                gap: 32px;
-                position: relative;
-            }
-        }
-
-        &-item {
-            height: max-content;
-            @media screen and (max-width: 1279px) {
-                &:first-child {
-                    position: relative;
-                    left: -30px;
-                }
-            }
-        }
-
-        &-text {
-            text-decoration: none;
-            margin: 0;
-            margin-bottom: 0px;
-            @include fonts ($fw: 400, $fs: 18px, $lh: 24px);
-            letter-spacing: 0.02em;
-            color: #202025;
-            @media screen and (max-width: 1279px) {
-                @include fonts ($fw: 400, $fs: 28px, $lh: 24px);
-                }
-        }
+    &-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: flex-end;
+      gap: 60px;
     }
 
-    // &__logo-link {
-    // }
-    &__button-menu {
-        margin: 0;
-        padding: 0;
-        margin-left: auto;
-
-        @include tablet {
-            margin-left: 40px;
-        }
-
-        border: none;
-        background-color: inherit;
-
-        @include desktop {
-            display: none;
-        }
+    &-item {
+      height: max-content;
     }
 
-    &__input-box {
-        margin-left: auto;
-        display: flex;
-        position: relative;
+    &-text {
+      margin: 0;
+      margin-bottom: 0px;
 
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.33;
+      letter-spacing: 0.02em;
+      color: #202025;
+    }
+  }
 
-        @include desktop {
-            margin-right: 172px;
-            height: 40px;
-        }
-        &--menu {
-            position: absolute;
-            display: block;
-            height: 40px;
-            margin-top: 44px;
-            @include tablet {
-                display: none;
-            }
-        }
+  // &__logo-link {
+  // }
+  &__button-menu {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+
+    @include tablet {
+      margin-left: 40px;
     }
 
-    &__input-text {
-        padding: 0px 0px 0px 48px;
-        width: 288px;
-        border: 1px solid #FD5103;
-        border-radius: 4px;
-        &--menu {
-            height: 40px;
-            width: 280px;
-        }
+    border: none;
+    background-color: inherit;
 
-        &::placeholder {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.71;
-            letter-spacing: 0.02em;
-            color: #5F6775;
-            opacity: 0.4;
-        }
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__input-box {
+    margin-left: auto;
+    display: flex;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
 
-    &__input-button {
-        position: absolute;
-        border: 1px solid #FD5103;
-        border-left: none;
-        border-bottom: none;
-        border-top: none;
-        background-color: inherit;
-        height: 100%;
-        width: 40px;
-        &--menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    @include desktop {
+      margin-right: 172px;
     }
+  }
 
-    &__color-theme-box {
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        @media screen and (max-width: 1279px) {
-            top: 33px;
-            transform: translateY(0%);
-            left: 213px;
-        }
-        @media screen and (max-width: 767px) {
-            top: 20px;
-            transform: translateY(0%);
-            left: 20px;
-        }
-        
-        &-text {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 1.33;
-            align-items: center;
-            color: #5F6775;
-            ;
-        }
-        &-switch {
-            position: relative;
-            width: 40px;
-            height: 20px;
-            background: #FFFFFF;        
-            border: 0.604701px solid #FD5103;
-            border-radius: 10px;
-            &-ball {
-                height: 16px;
-                width: 16px;
-                background-color: #FD5103;
-                border-radius: 9px;
-                margin-top: 1px;
-                margin-left: 1px;
-                &.ball-left {
-                    margin-left: 1px;
-                }
-                &.ball-right {
-                    transform: translateX(20px);
-                }
-            }
-        }
-        
+  &__input-text {
+    padding: 0px 0px 0px 48px;
+    width: 288px;
+    border: 1px solid #fd5103;
+    border-radius: 4px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.71;
+      letter-spacing: 0.02em;
+      color: #5f6775;
+      opacity: 0.4;
     }
+  }
+
+  &__input-button {
+    position: absolute;
+    border: 1px solid #fd5103;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+    background-color: inherit;
+    height: 100%;
+    width: 40px;
+  }
+
+  &__color-theme-box {
+    @media screen and (max-width: 1279px) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.33;
+      align-items: center;
+      color: #5f6775;
+    }
+    &__switch {
+      position: relative;
+      width: 40px;
+      height: 20px;
+      background: #ffffff;
+      border: 0.604701px solid #fd5103;
+      border-radius: 10px;
+      &-ball {
+        height: 16px;
+        width: 16px;
+        background-color: #fd5103;
+        border-radius: 9px;
+        margin-top: 1px;
+        margin-left: 1px;
+        &.ball-left {
+          margin-left: 1px;
+        }
+        &.ball-right {
+          transform: translateX(20px);
+        }
+      }
+    }
+  }
 }
 
 body>header>div>div.header__menu>div.header__input-box.header__input-box--menu>button>img {
     margin-left: 5px;
 }
+  

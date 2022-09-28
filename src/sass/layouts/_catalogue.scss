@@ -1,3 +1,180 @@
+.modal-first {
+  position: relative;
+
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 480px;
+  padding: 40px 20px;
+
+  @include tablet {
+    display: flex;
+    flex-flow: wrap;
+    min-width: 768px;
+
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    width: 129px;
+    height: 37px;
+
+    @include fonts(Roboto, normal, 900, 32px, 38px);
+
+    color: $colorFontSecondary;
+
+    @include tablet {
+      order: 1;
+      margin-left: 320px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__title-second {
+    margin-bottom: 20px;
+    width: 122px;
+    height: 26px;
+
+    @include fonts(Poppins, normal, 600, 16px, 26px);
+
+    text-transform: uppercase;
+    color: $colorFontSecondary;
+
+    @include tablet {
+      @include fonts(Poppins, normal, 600, 16px, 24px);
+      margin-bottom: 24px;
+    }
+
+    &.ingridients {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    width: 275px;
+    height: 168px;
+
+    @include fonts(Poppins, normal, 400, 16px, 28px);
+
+    color: $colorFontTertiary;
+
+    @include tablet {
+      width: 615px;
+      height: 84px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 22px;
+    min-width: 280px;
+
+    @include tablet {
+      margin-bottom: 0;
+      width: 288px;
+      height: 320px;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      order: 0;
+    }
+  }
+
+  &__span {
+    width: 80px;
+    height: 21px;
+
+    @include fonts(Poppins, normal, 300, 14px, 21px);
+
+    color: $colorFontSecondary;
+  }
+
+  &__list {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    padding-inline-start: 0;
+
+    @include tablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__item {
+    @include fonts(Poppins, normal, 400, 16px, 26px);
+
+    color: $colorFontTertiary;
+
+    &:before {
+      content: '\2736';
+      margin-right: 0.5em;
+      color: #000917;
+    }
+  }
+
+  &__button {
+    @include fonts(Roboto, normal, 400, 20px, 24px);
+    letter-spacing: 0.02em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 22px;
+    gap: 10px;
+
+    width: 185px;
+    height: 48px;
+
+    background: $colorFontPrimary;
+    border-radius: 4px;
+
+    color: $colorFontQuaternary;
+    border-color: transparent;
+
+    @include tablet {
+      display: flex;
+      justify-content: end;
+      margin-left: auto;
+      // position: absolute;
+      // right: 28px;
+      // bottom: 28px;
+      order: 4;
+    }
+  }
+
+  &__icon-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    @include tablet {
+      top: 12px;
+    right: 12px;
+    }
+  }
+
+  &__instractions {
+    @include tablet {
+      order: 3;
+    }
+  }
+
+  &__ingridients {
+    @include tablet {
+      order: 2;
+      margin-left: 320px;
+    }
+  }
+}
+
 .catalogue__title {
     @include fonts($ff: Poppins,
         $ffs: normal,
@@ -32,3 +209,4 @@ padding-top: 48px;
     justify-content: center;
     padding-top: 16px;
 }
+

@@ -206,10 +206,6 @@
         display: none;
       }
 
-      @include desktop {
-        display: block;
-      }
-
       @media screen and (max-width: 767px) {
         position: absolute;
         top: 91px;
@@ -217,6 +213,16 @@
         margin-left: 0;
         height: 40px;
         width: 280px;
+      }
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    &--menu {
+      @include desktop {
+        display: block;
       }
     }
   }

@@ -1,0 +1,124 @@
+.backdrop-campari {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-campari.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop-campari.is-hidden .modal-campari {
+  transform: translate(-50%, -50%) scale(0.2);
+}
+.modal-campari {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 320px;
+  background-color: $colorBackgroundDay;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @include tablet {
+    width: 715px;
+  }
+}
+.campari-titles__border {
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  @include tablet {
+    border-bottom: 1px solid $colorFontPrimary;
+    padding: 40px 28px;
+  }
+}
+
+.campari-title {
+  @include fonts($ff: Roboto, $ffs: normal, $fw: 900, $fs: 32px, $lh: 38px);
+  color: $colorFontSecondary;
+  margin-bottom: 28px;
+  &__min {
+    @include fonts($ff: Poppins, $ffs: normal, $fw: 600, $fs: 16px, $lh: 24px);
+    text-transform: uppercase;
+  }
+}
+
+.campari-text {
+  &__container {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 120px;
+
+    @include tablet {
+      padding-top: 28px;
+      padding-left: 28px;
+      padding-right: 33px;
+      padding-bottom: 116px;
+    }
+  }
+  color: $colorFontTertiary;
+  margin-bottom: 28px;
+  @include fonts($ff: Poppins, $ffs: normal, $fw: 400, $fs: 16px, $lh: 28px);
+}
+.campari-text__b {
+  color: #000000;
+}
+
+.campari-list__item {
+  @include fonts($ff: Poppins, $ffs: normal, $fw: 400, $fs: 16px, $lh: 26px);
+  color: #5f6775;
+}
+.campari-list__itemb {
+  color: $colorFontSecondary;
+}
+
+.campari-btn__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background-color: $colorBackgroundDay;
+}
+
+.campari-icon__close {
+  // fill: $colorFontSecondary;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.campari-btn__add {
+  position: absolute;
+  left: 16px;
+  bottom: 40px;
+  @include tablet {
+    width: max-content;
+
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+  }
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include fonts($ff: Roboto, $ffs: normal, $fw: 400, $fs: 20px, $lh: 24px);
+  letter-spacing: 0.02em;
+  padding: 12px 24px;
+  background-color: $colorFontPrimary;
+}

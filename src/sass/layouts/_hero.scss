@@ -9,6 +9,7 @@
     display: flex;
     padding-top: 70px;
     padding-bottom: 60px;
+    position: relative;
   }
   @include desktop {
     padding-top: 30px;
@@ -32,7 +33,7 @@
 
   @include desktop {
     @include fonts($fs: 52px, $lh: 80px);
-    max-width: 668px;
+    width: 668px;
   }
 }
 

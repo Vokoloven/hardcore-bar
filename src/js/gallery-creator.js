@@ -1,33 +1,48 @@
 import templateFunction from '../template/coctail-card.hbs';
 import { getApiData } from './rendering-catalogue';
+import { checkingScreenWidth } from './cheking-screen-width';
 
 refsGallery = {
   formHeader: document.querySelector('.header__search-form'),
-  cataloguePattern: document.querySelector('.catalogue-pattern'),
+  cataloguePattern: document.querySelector('.catalogue__list'),
 };
 
 const getClassApiData = new getApiData();
 
-refsGallery.formHeader.addEventListener('submit', getSearchByName);
+refsGallery.formHeader.addEventListener('submit', getSearchCocktailByName);
 
-function getSearchByName(e) {
+function getSearchCocktailByName(e) {
   e.preventDefault();
   getClassApiData.value = e.currentTarget.elements.headerInput.value.trim();
   refsGallery.formHeader.reset();
   if (getClassApiData.value) {
     getClassApiData.key = 's';
-    getSearchResultByName();
+    getRenderingCocktailByName();
     refsGallery.cataloguePattern.innerHTML = '';
   }
 }
 
-async function getSearchResultByName() {
+async function getRenderingCocktailByName() {
   const r = await getClassApiData.getParsedApiData();
+
+  getRenderingApi(r);
+}
+
+async function getRenderingRandomCoctail() {
+  for (let i = 0; i < checkingScreenWidth; i += 1) {
+    const r = await getClassApiData.getParsedApiDataRandom();
+    getRenderingApi(r);
+  }
+}
+
+getRenderingRandomCoctail();
+
+function getRenderingApi(r) {
   const data = r
     .map(result => {
       return templateFunction(result);
     })
     .join('');
-  console.log(data);
+
   refsGallery.cataloguePattern.insertAdjacentHTML('beforeend', data);
 }

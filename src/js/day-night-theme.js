@@ -1,13 +1,13 @@
 const refsTheme = {
   body: document.querySelector('body'),
   themeBox: document.querySelector(
-    'body > header > div > div.header__color-theme-box > div'
+    'body > header > div.header__menu.header__menu--is-hidden > div.header__color-theme-box.header__color-theme-box--menu > div'
   ),
   themeBall: document.querySelector(
-    'body > header > div > div.header__color-theme-box > div > div'
+    'body > header > div.header__menu.header__menu--is-hidden > div.header__color-theme-box.header__color-theme-box--menu > div > div'
   ),
   searchInput: document.querySelector(
-    'body > header > div > div.header__input-box > input'
+    'body > header > div.header__menu.header__menu--is-hidden > div.header__input-box.header__input-box--menu > form > input'
   ),
   paragraphText: document.querySelectorAll('p'),
 

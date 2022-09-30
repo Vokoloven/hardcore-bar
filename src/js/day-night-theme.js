@@ -1,14 +1,12 @@
 const refsTheme = {
   body: document.querySelector('body'),
   themeBox: document.querySelector(
-    'body > header > div.header__menu.header__menu--is-hidden > div.header__color-theme-box.header__color-theme-box--menu > div'
+    'body > header > div.header__menu.header__menu--is-hidden > div'
   ),
   themeBall: document.querySelector(
     'body > header > div.header__menu.header__menu--is-hidden > div.header__color-theme-box.header__color-theme-box--menu > div > div'
   ),
-  searchInput: document.querySelector(
-    'body > header > div.header__menu.header__menu--is-hidden > div.header__input-box.header__input-box--menu > form > input'
-  ),
+  searchInput: document.querySelector('.header__input'),
   paragraphText: document.querySelectorAll('p'),
 
   headerTextPr: document.querySelector('h1'),

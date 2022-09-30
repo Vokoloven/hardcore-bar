@@ -7,7 +7,24 @@
         class="header__logo"
       />
     </a>
-
+    <div class="header__input-box--menu inputMenu--is-hidden">
+      <form class="header__search-form">
+        <button class="header__input-button" type="submit">
+          <img
+            src="./images/header/bx_search.svg"
+            alt="search-btn-img"
+            class="header__input-icon"
+          />
+        </button>
+        <input
+          class="header__input"
+          name="headerInput"
+          type="text"
+          placeholder="Search"
+          autocomplete="off"
+        />
+      </form>
+    </div>
     <button class="header__button-menu">
       <svg class="header__icon-menu" width="30px" height="16px">
         <use href="./images/header/header-sprite.svg#icon-menu-black"></use>
@@ -39,28 +56,13 @@
           >
         </li>
         <li class="header__nav-item">
-          <button type="button" class="header__nav-text--btn">Favorite</button>
+          <button type="button" class="header__nav-text header__nav-text--btn">
+            Favorite
+          </button>
         </li>
       </ul>
     </nav>
-    <div class="header__input-box header__input-box--menu">
-      <form class="header__search-form">
-        <button class="header__input-button">
-          <img
-            src="./images/header/bx_search.svg"
-            alt="search-btn-img"
-            class="header__input-icon"
-          />
-        </button>
-        <input
-          class="header__input"
-          name="headerInput"
-          type="text"
-          placeholder="Search"
-          autocomplete="off"
-        />
-      </form>
-    </div>
+
     <div class="header__color-theme-box header__color-theme-box--menu">
       <span
         class="header__color-theme-box-text header__color-theme-box-text--light"
@@ -78,8 +80,8 @@
   <div class="header__favorite-box header__favorite-box--is-hidden">
     <ul class="header__favorite-box__list">
       <li class="header__favorite-box__item">
-        <a onclick="return false" class="header__favorite-box__text" href=""
-          ><span> Favorite cocktails</span></a
+        <a onclick="return false" class="header__favorite-box__text" href="">
+          Favorite cocktails</a
         >
       </li>
       <li class="header__favorite-box__item">

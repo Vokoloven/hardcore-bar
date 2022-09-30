@@ -94,6 +94,8 @@
   }
 
   &__item {
+    color: $colorFontTertiary;
+
     @include mobile {
       cursor: pointer;
       @include fonts($fw: 700, $ffs: bold, $fs: 10px, $lh: 15px);

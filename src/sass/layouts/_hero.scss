@@ -1,12 +1,13 @@
 .hero {
   @include mobile {
-    background-color: $colorBackgroundDay;
+    background-color: inherit;
     padding-top: 60px;
     padding-bottom: 40px;
   }
 
   @include tablet {
     display: flex;
+    justify-content: space-between;
     padding-top: 70px;
     padding-bottom: 60px;
     position: relative;

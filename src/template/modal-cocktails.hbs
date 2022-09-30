@@ -1,30 +1,40 @@
-<h2 class='modal-first__title'>Negroni</h2>
-<div class='modal-first__instractions'>
-  <h3 class='modal-first__title-second'>Instractions:</h3>
-  <p class='modal-first__text'>
-    Add the gin, Campari and sweet vermouth to a mixing glass filled with ice,
-    and stir until well-chilled. Strain into a rocks glass filled with large ice
-    cubes. Garnish with an orange peel.
-  </p>
-</div>
-<img
-  class='modal-first__img'
-  src='https://format.dp.ua/components/com_jshopping/files/img_products/stakan-whisky-sw-ny01.jpg'
-  alt='buhlo'
-/>
-<div class='modal-first__ingridients'>
-  <h3 class='modal-first__title-second ingridients'>INGREDIENTS</h3>
-  <span class='modal-first__span'>Per cocktail</span>
-  <ul class='modal-first__list list'>
-    <li class='modal-first__item'><a href="">Ice</a></li>
-    <li class='modal-first__item'><a href="">1 ounce gin</a></li>
-    <li class='modal-first__item'><a href="">1 ounce Campari</a></li>
-    <li class='modal-first__item'><a href="">1 ounce sweet vermouth</a></li>
-    <li class='modal-first__item'><a href="">Garnish: orange peel</a></li>
-  </ul>
-</div>
-<button type='button' class='btn__orange modal-first__button'>Add to favorite</button>
+<div class='modal-first'>
+  <h2 class='modal-first__title'>{{strDrink}}</h2>
 
-<svg class='modal-first__icon-close' width='32px' height='32px'>
-  <use href='./images/header/header-sprite.svg#icon-clarity_close-line'></use>
-</svg>
+  <div class='modal-first__instractions'>
+    <h3 class='modal-first__title-second'>Instractions:</h3>
+    <p class='modal-first__text'>{{strInstructions}}</p>
+  </div>
+
+  <img class='modal-first__img' src='{{strDrinkThumb}}' alt='{{strDrink}}' />
+
+  <div class='modal-first__ingridients'>
+    <h3 class='modal-first__title-second ingridients'>INGREDIENTS</h3>
+    <span class='modal-first__span'>Per cocktail</span>
+
+    <ul class='modal-first__list list'>
+      <li class='modal-first__item'><a href=''>Ice</a></li>
+      <li class='modal-first__item'><a href=''>1 ounce gin</a></li>
+      <li class='modal-first__item'><a href=''>1 ounce Campari</a></li>
+      <li class='modal-first__item'>
+        <a href=''>1 ounce sweet vermouth</a>
+      </li>
+      <li class='modal-first__item'>
+        <a href=''>Garnish: orange peel</a>
+      </li>
+    </ul>
+  </div>
+
+  <button type='button' class='btn__orange modal-first__button'>
+    Add to favorite
+  </button>
+
+  <svg
+    data-modal-close
+    class='modal-first__icon-close'
+    width='32px'
+    height='32px'
+  >
+    <use href='./images/header/header-sprite.svg#icon-clarity_close-line'></use>
+  </svg>
+</div>

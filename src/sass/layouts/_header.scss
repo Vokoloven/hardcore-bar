@@ -421,13 +421,16 @@
         border-radius: 9px;
         margin-top: 1px;
         margin-left: 1.5px;
+        transition: 250ms;
 
         &.ball-left {
           margin-left: 1px;
+          transition: 250ms;
         }
 
         &.ball-right {
           transform: translateX(19.5px);
+          transition: 250ms;
         }
       }
     }

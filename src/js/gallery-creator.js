@@ -88,25 +88,6 @@ const refsModal = {
   modal: document.querySelector('[data-modal]'),
 };
 
-<<<<<<< HEAD
-let markup = modalCoctails();
-
-function CreateModal(e) {
-  if (e.target.classList.contains('open-modal-button')) {
-    toggleModals();
-    refsModal.modal.insertAdjacentHTML('beforeend', markup);
-    const closeModalBtn = document.querySelector('[data-modal-close]');
-    closeModalBtn.addEventListener('click', toggleModals);
-    markup = '';
-  }
-}
-
-function toggleModals() {
-  document.body.classList.toggle('overflow');
-  refsModal.modal.classList.toggle('is-hidden');
-}
-// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑Sergey↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-=======
 async function getSearchCocktailById(id) {
   getClassApiData.key = 'i';
   getClassApiData.value = id;
@@ -141,7 +122,6 @@ function modalCocktails(e) {
   getSearchCocktailById(getId);
   refsModal.modalPatt.innerHTML = '';
 }
->>>>>>> 5d3f50c2473d08513d826469f93a26442ab7f5ee
 
 //  ----------Іванка---------------
 let nameIngredient = '';

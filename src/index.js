@@ -8,4 +8,4 @@ import './js/change-page';
 import './js/add-to-favorite';
 import './js/light-scroll';
 import './js/sound';
-import './js/add-to-favorite-new';
+// import './js/add-to-favorite-new';

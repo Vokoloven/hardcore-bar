@@ -1,9 +1,10 @@
 import cocktailCard from '../template/cocktail-card.hbs';
 import noFindAnyCoctail from '../template/not-found-cocktails.hbs';
-import modalCoctails from '../template/modal-cocktails.hbs';
-import modalIngredients from '../template/favorite-ingredients.hbs';
 import { getApiData } from './rendering-catalogue';
 import { checkingScreenWidth } from './cheking-screen-width';
+import modalCoctails from '../template/modal-cocktails.hbs';
+
+// const InfiniteScroll = require('infinite-scroll');
 
 const refsGallery = {
   formHeader: document.querySelector('.header__search-form'),
@@ -21,7 +22,6 @@ function getSearchCocktailByName(e) {
   refsGallery.formHeader.reset();
   if (getClassApiData.value) {
     getClassApiData.key = 's';
-    getClassApiData.param = 'search';
     getRenderingCocktailByName();
     refsGallery.catalogueList.innerHTML = '';
   }
@@ -51,14 +51,13 @@ function getRenderingApi(r) {
     .join('');
 
   refsGallery.catalogueList.insertAdjacentHTML('beforeend', data);
-
+  // console.log(data);
   // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓Sergey↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
   const openModalBtn = document.querySelector('[data-modal-open]');
-  openModalBtn.addEventListener('click', toggleModals);
-  openModalBtn.addEventListener('click', modalCocktails);
+  openModalBtn.addEventListener('click', CreateModal);
   // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑Sergey↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 }
-
+getRenderingApi;
 function ifNoFindAnyCocktail(r) {
   if (r !== null) {
     let arr = [];
@@ -78,79 +77,33 @@ function ifNoFindAnyCocktail(r) {
   }
 }
 
-function refactoringCocktailsArray(elements) {
-  return elements.map(el => {
-    let arr = [];
-
-    for (let key of Object.keys(el)) {
-      for (let i = 1; i < 15; i += 1) {
-        if (key === `strIngredient${i}` && el[key] !== null) {
-          arr.push(el[key]);
-          el.strIngredient = arr;
-        }
-      }
-    }
-  });
-}
-
 function resetContent() {
   refsGallery.catalogueList.innerHTML = '';
   refsGallery.catalogueTitle.textContent = '';
 }
-
+// resetContent();
 // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓Sergey↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 const refsModal = {
   modal: document.querySelector('[data-modal]'),
-  modalPatt: document.querySelector('.modal-first'),
 };
 
-async function getSearchCocktailById(id) {
-  getClassApiData.key = 'i';
-  getClassApiData.value = id;
-  getClassApiData.param = 'lookup';
-  const r = await getClassApiData.getParsedApiData();
-  refactoringCocktailsArray(r);
-  const [resp] = r;
-  refsModal.modalPatt.insertAdjacentHTML('beforeend', modalCoctails(resp));
-  const closeModalBtn = document.querySelector('[data-modal-close]');
-  closeModalBtn.addEventListener('click', toggleModals);
+let markup = modalCoctails();
+
+function CreateModal(e) {
+  if (e.target.classList.contains('open-modal-button')) {
+    toggleModals();
+    refsModal.modal.insertAdjacentHTML('beforeend', markup);
+    const closeModalBtn = document.querySelector('[data-modal-close]');
+    closeModalBtn.addEventListener('click', toggleModals);
+    markup = '';
+  }
 }
 
-let markupIngredients = modalIngredients();
-
-function modalCocktails(e) {
-  const getId = e.target.offsetParent.attributes[0].value;
-
-  getSearchCocktailById(getId);
-  refsModal.modalPatt.innerHTML = '';
+function toggleModals() {
+  document.body.classList.toggle('overflow');
+  refsModal.modal.classList.toggle('is-hidden');
 }
-
-// function CreateModal(e) {
-//   if (e.target.classList.contains('open-modal-button')) {
-//     const getId = Number(e.target.offsetParent.attributes[0].value);
-
-//     toggleModals();
-
-//     // refsModal.modal.insertAdjacentHTML('beforeend', markup);
-
-//     const closeModalBtn = document.querySelector('[data-modal-close]');
-//     closeModalBtn.addEventListener('click', toggleModals);
-//     // ---Іванка-----
-//     const openModaIngred = document.querySelector('.modal-first__list');
-
-//     if (!refsModal.modal.classList.contains('is-hidden')) {
-//       openModaIngred.addEventListener('click', openModalIng);
-//     }
-//     // ----Іванка---
-//     markup = '';
-//   }
-// }
-
-// function toggleModals() {
-//   document.body.classList.toggle('overflow');
-//   refsModal.modal.classList.toggle('is-hidden');
-// }
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑Sergey↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 //  ----------Іванка---------------
@@ -160,7 +113,7 @@ function openModalIng(event) {
   if (event.target.classList.contains('modal-first__item')) {
     document.body.classList.add('overflow-campari');
     nameIngredient = document.querySelector('.modal-first__list').textContent;
-
+    console.log(nameIngredient);
     const modalIngredMarkup = document.querySelector('.backdrop-campari');
 
     modalIngredMarkup.insertAdjacentHTML('beforeend', markupIngredients);
@@ -172,18 +125,6 @@ function openModalIng(event) {
   }
 }
 
-function toggleModals(e) {
-  if (
-    e.target.classList.contains('open-modal-button') ||
-    e.target.classList.contains('modal-first__icon-close')
-  ) {
-    document.body.classList.toggle('overflow');
-    refsModal.modal.classList.toggle('is-hidden');
-  }
-}
-// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑Sergey↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-
-// -----Іванка
 function closeOnClick(event) {
   if (event.target.classList.contains('red')) {
     document

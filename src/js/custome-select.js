@@ -24,9 +24,9 @@ function onItemClick(e) {
   refs.selectBody.classList.add('is-hidden-hero');
 }
 
-// const refsGallery = {
-//   catalogueList: document.querySelector('.catalogue__list'),
-// };
+const refsGallery = {
+  catalogueList: document.querySelector('.catalogue__list'),
+};
 
 const getData = new getApiData();
 
@@ -37,10 +37,9 @@ async function getSearchCocktailFirstLetter(e) {
   getData.value = e.target.dataset.value;
 
   if (getData.value) {
-    getData.param = 'search';
     getData.key = 'f';
     getRenderingCocktailfirst();
-    refs.catalogueList.innerHTML = '';
+    refsGallery.catalogueList.innerHTML = '';
   }
 }
 async function getRenderingCocktailfirst() {
@@ -54,7 +53,7 @@ function getRenderingApi(r) {
       return cocktailCard(result);
     })
     .join('');
-  refs.catalogueList.insertAdjacentHTML('beforeend', data);
+  refsGallery.catalogueList.insertAdjacentHTML('beforeend', data);
 }
 
 function ifNoFindAnyCocktail(r) {

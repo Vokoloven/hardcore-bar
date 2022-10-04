@@ -1,16 +1,17 @@
 .modal-first {
   position: absolute;
   overflow: hidden;
+  // width: 300px;
+  // height: 300px;
 
   z-index: 2;
 
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   min-height: auto;
 
-  background-color: $colorFontQuaternary;
+  background-color: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -35,6 +36,8 @@
 
   &__title {
     margin-bottom: 20px;
+    width: 129px;
+    height: 37px;
 
     @include fonts(Roboto, normal, 900, 32px, 38px);
 
@@ -70,6 +73,8 @@
 
   &__text {
     margin-bottom: 32px;
+    width: 275px;
+    height: 168px;
 
     @include fonts(Poppins, normal, 400, 16px, 28px);
 
@@ -77,6 +82,7 @@
 
     @include tablet {
       width: 615px;
+      height: 84px;
       margin-bottom: 40px;
     }
   }
@@ -88,7 +94,7 @@
     @include tablet {
       margin-bottom: 0;
       width: 288px;
-      height: auto;
+      height: 320px;
       display: flex;
       position: absolute;
       top: 0;
@@ -113,7 +119,7 @@
     padding-inline-start: 0;
 
     @include tablet {
-      min-height: 130px;
+      margin-bottom: 52px;
     }
   }
 
@@ -152,6 +158,9 @@
       display: flex;
       justify-content: end;
       margin-left: auto;
+      // position: absolute;
+      // right: 28px;
+      // bottom: 28px;
       order: 4;
     }
   }
@@ -160,7 +169,8 @@
     position: absolute;
     top: 16px;
     right: 16px;
-
+    background-color: #fd5103;
+    fill: black;
     border-radius: 50%;
 
     @include tablet {
@@ -312,9 +322,9 @@
 }
 
 .backdrop {
-  z-index: 1;
-
   position: fixed;
+
+  z-index: 1;
 
   top: 0;
   left: 0;
@@ -322,7 +332,4 @@
   height: 100%;
 
   background: rgba(0, 0, 0, 0.2);
-
-  transition: opacity 750ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }

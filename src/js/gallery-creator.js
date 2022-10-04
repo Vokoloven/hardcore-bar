@@ -88,6 +88,7 @@ const refsModal = {
   modal: document.querySelector('[data-modal]'),
 };
 
+<<<<<<< HEAD
 let markup = modalCoctails();
 
 function CreateModal(e) {
@@ -105,6 +106,42 @@ function toggleModals() {
   refsModal.modal.classList.toggle('is-hidden');
 }
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑Sergey↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+=======
+async function getSearchCocktailById(id) {
+  getClassApiData.key = 'i';
+  getClassApiData.value = id;
+  getClassApiData.param = 'lookup';
+  const r = await getClassApiData.getParsedApiData();
+  refactoringCocktailsArray(r);
+  const [resp] = r;
+  refsModal.modalPatt.insertAdjacentHTML('beforeend', modalCoctails(resp));
+  const closeModalBtn = document.querySelector('[data-modal-close]');
+  searchIngredientInModal();
+
+  // const modalItem = document.querySelector('.modal-first__item');
+
+  closeModalBtn.addEventListener('click', toggleModals);
+}
+
+function searchIngredientInModal() {
+  const modalListItems = document.querySelector('.modal-first__list');
+  modalListItems.addEventListener('click', onClickModalListItems);
+
+  function onClickModalListItems(e) {
+    const getListName = e.target.textContent;
+    console.dir(getListName);
+  }
+}
+
+let markupIngredients = modalIngredients();
+
+function modalCocktails(e) {
+  const getId = e.target.offsetParent.attributes[0].value;
+
+  getSearchCocktailById(getId);
+  refsModal.modalPatt.innerHTML = '';
+}
+>>>>>>> 5d3f50c2473d08513d826469f93a26442ab7f5ee
 
 //  ----------Іванка---------------
 let nameIngredient = '';

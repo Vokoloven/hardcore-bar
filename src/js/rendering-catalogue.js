@@ -4,11 +4,12 @@ export class getApiData {
   constructor() {
     this.searchKey = '';
     this.searchValue = '';
+    this.searchParam = '';
   }
 
   async getParsedApiData() {
     const params = {
-      url: `https://www.thecocktaildb.com/api/json/v1/1/search.php`,
+      url: `https://www.thecocktaildb.com/api/json/v1/1/${this.param}.php`,
       [this.searchKey]: `${this.value}`,
     };
 
@@ -52,5 +53,12 @@ export class getApiData {
 
   set value(newValue) {
     this.searchValue = newValue;
+  }
+  get param() {
+    return this.searchParam;
+  }
+
+  set param(newParam) {
+    this.searchParam = newParam;
   }
 }

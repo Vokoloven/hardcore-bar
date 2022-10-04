@@ -10,6 +10,7 @@ const inputIsHidden = document.querySelector('.header__input-box--menu');
 const favoriteMenuEl = document.querySelector('.header__favorite-box');
 
 refsMenu.headerBtnMenu.addEventListener('click', onClickMenuButton);
+console.log(refsMenu.headerBtnMenu);
 
 function onClickMenuButton() {
   refsMenu.headerMenu.classList.toggle('header__menu--is-hidden');
@@ -30,3 +31,4 @@ function onClickMenuButton() {
 //   refsMenu.headerIconMenu.style.fill = 'black';
 //   refsMenu.headerIconMenuClose.style.fill = 'black';
 // }
+

@@ -10,7 +10,7 @@ let favoriteCocktailsEl = JSON.parse(localStorage.savedCocktails || '[]');
 const catalogueListRef = document.querySelector('.catalogue__list');
 
 if (catalogueListRef) {
-  catalogueListRef.addEventListener('mousedown', onClickBtn);
+  catalogueListRef.addEventListener('mouseup', onClickBtn);
 }
 
 let randomCardsGallery = '';
@@ -22,13 +22,11 @@ function onClickBtn(e) {
     randomCardsGallery = catalogueListRef.children; // Отримуємо масив карток
 
     for (let i = 0; i < randomCardsGallery.length; i++) {
-      BtnToFavoriteCocktails = // Визначаємо де кнопка
-        randomCardsGallery[i].children[1].children[1].children[1];
+      BtnToFavoriteCocktails = randomCardsGallery[i]; // Визначаємо де кнопка
 
       BtnToFavoriteCocktails.addEventListener('click', allCocktailsMap); // Слухач по кліку
 
       e.target.childNodes[0].data = 'Remove'; // При натисканні на кнопку заміняємо слова
-
       function allCocktailsMap() {
         // Серіалізуємо в стрінгу
         htmlCoctailCard = new XMLSerializer().serializeToString(
@@ -37,7 +35,6 @@ function onClickBtn(e) {
         // Перевірка якщо елемент не є в масиві
         if (!favoriteCocktailsEl.includes(htmlCoctailCard)) {
           favoriteCocktailsEl.push(htmlCoctailCard); // Пушим його в масив
-
           // Добавляєм його в розмітку
           catalogueListFavoriteCocktails.insertAdjacentHTML(
             //
@@ -45,13 +42,12 @@ function onClickBtn(e) {
             htmlCoctailCard
           );
         }
-
-        // Добавляєм масив в локальне сховище
-        localStorage.setItem(
-          'savedCocktails',
-          JSON.stringify(favoriteCocktailsEl)
-        );
       }
+      // Добавляєм масив в локальне сховище
+      localStorage.setItem(
+        'savedCocktails',
+        JSON.stringify(favoriteCocktailsEl)
+      );
     }
   }
 }
@@ -66,6 +62,11 @@ catalogueListFavoriteCocktails.insertAdjacentHTML(
 );
 
 //                          ----- Remove Button -----
+
+const textBtnOnFav = document.querySelectorAll('.btn__transparent');
+for (let c = 0; c < textBtnOnFav.length; c++) {
+  textBtnOnFav[c].childNodes[0].data = 'Remove';
+}
 
 if (catalogueListFavoriteCocktails) {
   catalogueListFavoriteCocktails.addEventListener('click', onRemoveItemBtn);
@@ -97,5 +98,4 @@ function onRemoveItemBtn(e) {
       );
     }
   }
-  e.target.childNodes[0].data = 'Add to'; // При натисканні на кнопку заміняємо слова
 }

@@ -165,10 +165,12 @@ async function getSearchIngredientByName(name) {
   getClassApiData.value = name;
   getClassApiData.param = 'search';
   const r = await getClassApiData.getParsedApiDataIngredient();
-  console.log(r);
+
+  const [data] = r;
+
   refsModal.modalModalIngredientInfo.insertAdjacentHTML(
     'beforeend',
-    modalIngredients(r)
+    modalIngredients(data)
   );
 }
 

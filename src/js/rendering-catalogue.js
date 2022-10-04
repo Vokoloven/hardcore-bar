@@ -32,9 +32,8 @@ export class getApiData {
     try {
       const response = await axios.get(params.url, { params });
       const data = response.data.ingredients;
-      const [result] = data;
 
-      return result;
+      return data;
     } catch (error) {
       throw new Error(error);
     }
